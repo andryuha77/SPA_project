@@ -26,44 +26,42 @@
 		<!-- Adapted from: http://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
 		<form action="/name" method="POST">
 		  <div class="form-group">
-			<label for="name">Name</label>
-			<input type="text" class="form-control" name="name" id="name" placeholder="Enter your name">
-			<small id="emailHelp" class="form-text text-muted">The server will say hello to you, hopefully.</small>
-		  </div>
-		  <button type="submit" class="btn btn-primary">Submit</button>
-		</form>
-        
-        <!-- Adapted from: http://blog.excelstrategiesllc.com/2014/11/18/coding-your-first-javascript-bmi-calculator/ -->
-      <form action="/BMI" method="POST">
-<!--
-        <a href="http://blog.excelstrategiesllc.com" target="_blank">
-            <img src="http://blog.excelstrategiesllc.com/Images/ExcelStrategiesLLC.png" alt ="Excel Strategies, LLC - Logo" height="111" width="320"/>
-        </a>
--->
+              
         <h1>Adult BMI Calculator </h1>
+			<label for="name">Name</label>
+			<input type="text" class="form-control" name="name" placeholder="Enter your name">
+		  </div>
+		  <button type="submit" class="btn btn-primary" onClick="BMICalculate()">Submit</button>
+     
+        <!-- Adapted from: http://blog.excelstrategiesllc.com/2014/11/18/coding-your-first-javascript-bmi-calculator/ -->
 
         <!-- Setting up form elements for data input-->
         <h3>Enter your weight in pounds:</h3>
-        <input type="number"  id="weight" placeholder = "236">
+        <input type="number" class="form-control" id="weight" placeholder = "236">
         <b>lbs.</b>
         <br>
         <h3>Enter you height (in feet and inches):</h3>
-        <input type="number" id="heightft" placeholder = "6">
+        <input type="number" class="form-control" id="heightft" placeholder = "6">
         <b>ft.</b>
 
-        <p class="small"><input type="range" min="0" max="11" value="3" step="1"  id="heightin" style="width:90px;" oninput="Slider()" onchange="Slider()">
+        <p><input type="range" min="0" max="11" value="3" step="1"  id="heightin"  oninput="Slider()" onchange="Slider()">
         <b><label id="heightin_op">3 </label> in.</b></p>
 
 
-        <input type="button" value="Calculate" onClick="BMICalculate()" style="width:90px;"> 
+        <input type="button" "submit" class="btn btn-primary" value="Calculate" onClick="BMICalculate()" > 
         &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; 
-        <input type="button" value="Clear" onClick="Clear()" style="width:90px;">
-
-        <h2>Your BMI is:</h2>
-
+        <input type="button" class="btn btn-primary" value="Clear" onClick="Clear()" style="width:90px;">
+            
         <!-- Output BMI value and its description -->
-        <h4><label id="BMI"></label></h4>
-        <h5><label id="DESC"></label></h5>
+        <h2>Your BMI is: <label id="BMI"></label></h2>
+            
+        <h5>    
+        <div class="alert alert-warning alert-dismissible" role="alert">
+          <button type="button" class="close"  aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <strong></strong><label id="DESC"></label>
+        </div>
+         </h5>   
+<!--        <h5><label id="DESC"></label></h5>-->
 
       </form>  
 

@@ -26,22 +26,6 @@ The project was guided by the following excerpt from the project instructions:
 You must devise an idea for a web application, write the software, write documentation explaining how the application works, and write a short user guide for it.
 
 
-### Team Members
-We elected to complete this project as a team.
-The team members are:
-- Seasca the dog
-- Marco the dog
-- Mog the cat
-All team members contributed to all aspects of the project.
-However, Seasca was given the lead in documentation, Marco the lead in Python coding, and Mog was given the lead in front-end development (HTML, CSS and JS) and user experience.
-
-### Meetings
-Team meetings were held every Tuesday at 11am in the canteen at GMIT's Dublin Road campus for the duration of the project.
-At these meetings, the management of the project was discussed, among other topics.
-The project was divided into separate tasks, and each task was assigned to team members - usually on an individual basis.
-At each meeting, Mog took notes using their laptop and assigned the tasks using GitHub Issues.
-
-
 ### How to run the application
 The application is written using the [Flask](http://flask.pocoo.org/) library in [Python 3](https://www.python.org).
 Both must be installed to run the project.

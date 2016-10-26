@@ -12,7 +12,7 @@ def hello():
 @app.route("/perms", methods=["GET", "POST"])
 def perms():
 	perms = [''.join(p) for p in it.permutations(fl.request.values["userinput"])]
-	return '\n'.join(perms)
+	return ''.join("BMI")
 
 #    return "Hello " + fl.request.form["name"] + "!!!"
 #    return app.send_static_file('index.html', **locals())

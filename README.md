@@ -1,17 +1,15 @@
 # SPA_project
 Single-page web application using the Flask framework for Data Representation project
-
-# Basic Web Application Project Example
-#### Data Representation and Querying Project 2016
-
-This repository contains code and information for a third-year undergraduate project for the module **Data Representation and Querying**.
 The module is taught to undergraduate students at [GMIT](http://www.gmit.ie) in the Department of Computer Science and Applied Physics.
 The lecturer is [Ian McLoughlin](https://ianmcloughlin.github.io).
 
+# Web Application Project
+#### Data Representation and Querying Project 2016
+
 ### Project Overview
-We have created a Single-Page Web Application (SPA) that lets users track their To-Dos.
+I have created a Single-Page Web Application (SPA) that lets users calculate BMI.
 This application was selected after some deliberation.
-Initially, we considered three different applications:
+Initially, I considered three different applications:
 
 1. A [ToDoListMe](http://todolistme.net/) alternative.
 2. A [Pastebin](http://pastebin.com/) alternative.

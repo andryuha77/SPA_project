@@ -25,20 +25,15 @@
     <div class="container">         
         <br />
         <!-- Adapted from: http://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
-        <form>
+        <form action="/name" method="POST">
            <h1>Adult BMI Calculator </h1>           
               <div class="form-group">
-                <label for="name">User input</label>
-                <input type="text" class="form-control" name="userinput" id="userinput" placeholder="Enter a string">
-                <small id="emailHelp" class="form-text text-muted">The server will generate all permutations of the string for you.</small>
+                <label for="name">Hi! please enter your Name.</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name">
               </div>
           <button type="submit" id="submit" class="btn btn-primary" onClick="BMICalculate()">Submit</button>
         
         <br />
-    
-
-                <label for="serveroutput">Server result</label>
-                <textarea class="form-control" id="serveroutput" rows="10" placeholder="Please submit an input above."  readonly></textarea>
 
      <!--    Adapted from: http://blog.excelstrategiesllc.com/2014/11/18/coding-your-first-javascript-bmi-calculator       -->
 
@@ -46,13 +41,14 @@
             <input type="number" class="form-control" id="weight" placeholder = "220">
             <b>lbs.</b>
             <br>
+            
             <h3>Enter you height (in feet and inches):</h3>
             <input type="number" class="form-control" id="heightft" placeholder = "6">
-            <b>ft.</b>
-
-            <p><input type="range" min="0" max="11" value="3" step="1"  id="heightin"  oninput="Slider()" onchange="Slider()">
-            <b><label id="heightin_op">3 </label> in.</b></p>
-
+            <b>feet</b>
+            
+            <h3></h3>
+            <input type="number" class="form-control" id="heightin" placeholder = "3">
+            <b>Inches</b> <p></p>
 
             <input type="button"   id="submit" class="btn btn-primary" value="Calculate" onClick="BMICalculate()" > 
           

@@ -1,6 +1,5 @@
 # Originally adapted from:
 #   http://flask.pocoo.org/
-
 import flask as fl
 import itertools as it
 app = fl.Flask(__name__)

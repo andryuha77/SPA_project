@@ -31,13 +31,11 @@ This must also be installed.
 
 Once these prerequisites are installed, the application can be run locally:
 ```bash
-$ python h.py
+$ python run.py
 ```
 Once the application is running, it can be accessed by pointing your browser at http://127.0.0.1:5000/ .
 
 ### Architecture
-This web application runs in [Python 3](https://www.python.org) using the [Flask](http://flask.pocoo.org/) web micro-framework.
-Python 3 and Flask were requirements for the project.
-
-
-
+This web application runs in [Python 3](https://www.python.org) using the [Flask](http://flask.pocoo.org/) web micro-framework and uses SQLite as a database.
+Python 3 and Flask were requirements for the project, but SQLite was selected by the team.
+We chose SQLite as it is easy to use and does not require much setup to get the web application up and running.

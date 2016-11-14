@@ -1,45 +1,38 @@
 <!-- Originally adapted from:
  https://github.com/mjhea0/thinkful-mentor/tree/master/python/jinja/flask_example-->
 
-{% extends "layout.html" %}
-{% block title %}{{title}}{% endblock %}
-{% block head %}
+{% extends "layout.html" %} {% block title %}{{title}}{% endblock %} {% block head %}
 <!--aded to base and child templates using the super block-->
-  {{ super() }}
-{% endblock %}
-{% block page %}{{title}}{% endblock %}
-{% block heading %}
-  {{ super() }}
-{% endblock %}
-{% block content %}
+{{ super() }} {% endblock %} {% block page %}{{title}}{% endblock %} {% block heading %} {{ super() }} {% endblock %} {% block content %}
 <!--This is the start of child template>-->
-  <br>
-  <h4>Today: {{ current_time | datetimefilter }}</h4>
-  <br>
-
-
-            <input type="button"   id="submit" class="btn btn-primary" value="Calculate" onClick="BMICalculate()" > 
-
-            <!-- Output BMI value and its description -->
-            <h2>Your BMI is: <label {{BMI}}></label></h2>
-
-            <h5>    
-            <div class="alert alert-warning alert-dismissible" role="alert">
-              <button type="button" class="close"  aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <strong></strong><label id="DESC"></label>
-            </div>
-             </h5> 
-
-  <p>My string: {{my_string}}</p>
-  <p>Value from the list: {{my_list[3]}}</p>
-  <p>Loop through the list:</p>
-  <ul>
+<br>
+<h4>Today: {{ current_time | datetimefilter }}</h4>
+<br>
+<form id="myForm" action="/result" method="POST">
+    <!-- Output BMI value and its description -->
+    <h2>
+        <div class="content">Your BMI is: <span class='value'></span>
+            </h2>
+    <h5>
+        <div class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong></strong><label id="DESC"></label>
+        </div>
+    </h5>
+</form>
+<script>
+    document.querySelector('.content .value').innerHTML = document.cookie;
+</script>
+<p>My string: {{my_string}}</p>
+<p>Value from the list: {{my_list[3]}}</p>
+<p>Loop through the list:</p>
+<ul>
     {% for n in my_list %}
     <li>{{n}}</li>
     {% endfor %}
-  </ul>
-  <br>
-  <p>Same list with a filter: {{ my_list|join(', ') }}</p>
+</ul>
+<br>
+<p>Same list with a filter: {{ my_list|join(', ') }}</p>
 <!--his is the end of child template</h3>-->
 <!--  {% block footer %}
   {{super()}}

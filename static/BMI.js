@@ -46,13 +46,10 @@ function BMICalculate()
     var heightin = document.getElementById('heightin').value;
     var height = heightft * 12 + +heightin;
 
-    document.cookie= Math.round((weight / (height * height)) * 703.06957964);
-    getDescription(document.cookie);
-             setTimeout(function(){
-             window.location = "./result";
-         }, 1000);
+    BMI.innerHTML = Math.round((weight / (height * height)) * 703.06957964);
+    getDescription(BMI.innerHTML);
 }
-  
+
 /* Interpretation of BMI value */
 function getDescription(thisBMI)
 
@@ -71,7 +68,11 @@ function getDescription(thisBMI)
     else Description = "Please check your input values, BMI cannot be calculated.";
 
     var DESC = document.getElementById('DESC');
-    DESC.innerHTML = Description;
+    //  DESC.innerHTML = Description;
+    document.cookie = Description;
+    setTimeout(function () {
+        window.location = "./result";
+    }, 1000);
 }
 
 /* Reset Button */

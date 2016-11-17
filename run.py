@@ -16,18 +16,16 @@ app.jinja_env.filters['datetimefilter'] = datetimefilter
 
 @app.route("/", methods=['GET', 'POST'])
 def template_test():
-    return render_template('template.html', my_string="Wheeeee!", 
-        my_list=[0,1,2,3,4,5], title="Smart", current_time=datetime.datetime.now())
+    return render_template('template.html', current_time=datetime.datetime.now())
 
 @app.route("/result", methods=['GET', 'POST'])
 def result():
-    return render_template('result.html', my_string="Foo", 
-        my_list=[6,7,8,9,10,11], title="Result", current_time=datetime.datetime.now())
+    return render_template('result.html',title="Result", current_time=datetime.datetime.now())
 
 @app.route("/about")
 def about():
     return render_template('template.html', my_string="Bar", 
-        my_list=[12,13,14,15,16,17], title="About", current_time=datetime.datetime.now())
+    title="About", current_time=datetime.datetime.now())
 
 
 #include debuger

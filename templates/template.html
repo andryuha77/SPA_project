@@ -1,70 +1,35 @@
 <!-- Originally adapted from:
  https://github.com/mjhea0/thinkful-mentor/tree/master/python/jinja/flask_example-->
 
-{% extends "layout.html" %}
-{% block title %}{{title}}{% endblock %}
-{% block head %}
+{% extends "layout.html" %} {% block title %}{{title}}{% endblock %} {% block head %}
 <!--aded to base and child templates using the super block-->
-  {{ super() }}
-{% endblock %}
-{% block page %}{{title}}{% endblock %}
-{% block heading %}
-  {{ super() }}
-{% endblock %}
-{% block content %}
+{{ super() }} {% endblock %} {% block page %}{{title}}{% endblock %} {% block heading %} {{ super() }} {% endblock %} {% block content %}
 <!--This is the start of child template>-->
-  <br>
-  <h4>Today: {{ current_time | datetimefilter }}</h4>
-  <br>
-      <form action="/result" method="GET">        
-              <div class="form-group">
-  <!--              <label for="name">Hello! please enter your Name.</label>-->
-<!--                <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name">-->
-<!--              </div>
-          <button type="submit" id="submit" class="btn btn-primary" onClick="BMICalculate()">Submit</button>-->
-        
-     <!--    Adapted from: http://blog.excelstrategiesllc.com/2014/11/18/coding-your-first-javascript-bmi-calculator       -->
+<h4>Today: {{ current_time | datetimefilter }}</h4>
+<form action="/result" method="GET">
+    <div class="form-group">
+        <!--    Adapted from: http://blog.excelstrategiesllc.com/2014/11/18/coding-your-first-javascript-bmi-calculator       -->
+        <h3>Enter your weight in pounds:</h3>
+        <input type="number" class="form-control" id="weight" placeholder="220">
+        <b>lbs.</b>
+        <br>
 
-                 <h3>Enter your weight in pounds:</h3>
-            <input type="number" class="form-control" id="weight" placeholder = "220">
-            <b>lbs.</b>
-            <br>
-            
-            <h3>Enter you height (in feet and inches):</h3>
-            <input type="number" class="form-control" id="heightft" placeholder = "6">
-            <b>feet</b>
-            
-            <h3></h3>
-            <input type="number" class="form-control" id="heightin" placeholder = "3">
-            <b>Inches</b> <p></p>
+        <h3>Enter you height (in feet and inches):</h3>
+        <input type="number" class="form-control" id="heightft" placeholder="6">
+        <b>feet</b>
 
-            <input type="button"   name="BMI" id="submit" class="btn btn-primary" value="Calculate" onClick="BMICalculate();" > 
-                                           
-            <input type="button" class="btn btn-primary" value="Clear" onClick="Clear()" style="width:90px;">
+        <h3></h3>
+        <input type="number" class="form-control" id="heightin" placeholder="3">
+        <b>Inches</b>
+        <p></p>
 
-            <!-- Output BMI value and its description -->
+        <input type="button" name="BMI" id="submit" class="btn btn-primary" value="Calculate" onClick="BMICalculate();">
 
-            <h5>    
-            <div class="alert alert-warning alert-dismissible" role="alert">
-              <button type="button" class="close"  aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <strong></strong><label id="DESC"></label>
-            </div>
-             </h5>                         
-        </form>
-     
-       
-  <p>My string: {{my_string}}</p>
-  <p>Value from the list: {{my_list[3]}}</p>
-  <p>Loop through the list:</p>
-  <ul>
-    {% for n in my_list %}
-    <li>{{n}}</li>
-    {% endfor %}
-  </ul>
-  <br>
-  <p>Same list with a filter: {{ my_list|join(', ') }}</p>
-<!--his is the end of child template</h3>-->
-<!--  {% block footer %}
-  {{super()}}
-  {% endblock %}-->
+        <input type="button" class="btn btn-primary" value="Clear" onClick="Clear()" style="width:90px;">
+
+        <!-- Output BMI value and its description -->
+        <h2>Your BMI is: <label id="BMI"></label></h2>
+        <h5>
+        </h5>
+</form>
 {% endblock %}

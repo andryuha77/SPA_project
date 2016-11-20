@@ -4,11 +4,10 @@
 {% extends "layout.html" %} {% block title %}{{title}}{% endblock %} {% block head %}
 <!--aded to base and child templates using the super block-->
 {{ super() }} {% endblock %} {% block page %}{{title}}{% endblock %} {% block heading %} {{ super() }} {% endblock %} {% block content %}
-<!--This is the start of child template>-->
 <form id="myForm" action="/result" method="POST">
     <!-- Output BMI value and its description -->
     <h2>
-        <div class="content">Advise: <span class='value'></span>
+        <div class="content">{{ name }} you are: <span class='value'></span>
     </h2>
 </form>
 <h4>Today: {{ current_time | datetimefilter }}</h4>

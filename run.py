@@ -4,8 +4,10 @@
 
 from flask import Flask, render_template
 import datetime
+from time import sleep
 
-app = Flask(__name__)
+import flask as fl
+app = fl.Flask(__name__)
 
 @app.template_filter()
 def datetimefilter(value, format='%Y/%m/%d %H:%M'):
@@ -18,10 +20,13 @@ app.jinja_env.filters['datetimefilter'] = datetimefilter
 def template_test():
     return render_template('template.html', current_time=datetime.datetime.now())
 
+#Originally adapted from:
+#http://flask.pocoo.org/docs/0.11/quickstart/
 @app.route("/result", methods=['GET', 'POST'])
-def result():
-    return render_template('result.html',title="Result", current_time=datetime.datetime.now())
-
+@app.route('/result/<name>')
+def result(name=None):
+    return render_template('result.html',title="Advise from ", name=fl.request.form["name"], current_time=datetime.datetime.now())
+ 
 @app.route("/about")
 def about():
     return render_template('template.html', my_string="Bar", 

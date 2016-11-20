@@ -52,7 +52,6 @@ function BMICalculate()
 
 /* Interpretation of BMI value */
 function getDescription(thisBMI)
-
 {
     var Description = "";
     if (thisBMI < 18.5)
@@ -68,20 +67,13 @@ function getDescription(thisBMI)
     else Description = "Please check your input values, BMI cannot be calculated.";
 
     var DESC = document.getElementById('DESC');
-    //  DESC.innerHTML = Description;
     document.cookie = Description;
-    setTimeout(function () {
-        window.location = "./result";
-    }, 1000);
 }
 
 /* Reset Button */
 function Clear() {
     document.getElementById('weight').value = "";
     document.getElementById('heightft').value = "";
-    document.getElementById('heightin').value = "3";
-    document.getElementById('DESC').value = "";
+    document.getElementById('heightin').value = "";
     BMI.innerHTML = "";
-    DESC.innerHTML = "";
-    heightin_op.innerHTML = "3";
 }

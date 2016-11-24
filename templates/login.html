@@ -1,0 +1,24 @@
+<!-- Originally adapted from:
+ https://github.com/mjhea0/thinkful-mentor/tree/master/python/jinja/flask_example-->
+
+{% extends "layout.html" %} {% block title %}{{title}}{% endblock %} {% block head %}
+<!--aded to base and child templates using the super block-->
+{{ super() }} {% endblock %} {% block page %}{{title}}{% endblock %} {% block heading %}
+<h1>
+    <h1>Please login to use</h1>
+</h1>
+{{ super() }} {% endblock %} {% block content %}
+<!--<h1><h1>Please login</h1></h1>-->
+<br>
+<form action="" method="post">
+    <input type="text" placeholder="Username" name="username" value="{{
+          request.form.username }}">
+    <input type="password" placeholder="Password" name="password" value="{{
+          request.form.password }}">
+    <input class="btn btn-default" type="submit" value="Login">
+</form>
+{% if error %}
+<p class="error"><strong>Error:</strong> {{ error }} {% endif %}
+    <h4>Today: {{ current_time | datetimefilter }}</h4>
+    <!--his is the end of child template</h3>-->
+    {% endblock %}

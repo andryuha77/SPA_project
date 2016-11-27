@@ -8,7 +8,6 @@ function BMICalculate()
     var weight = document.getElementById('weight').value;
     var heightft = document.getElementById('heightft').value;
 
-    /* Error Handling  for invalid data entered*/
     if (weight == "") {
         alert("Please enter your weight.");
         return;
@@ -17,6 +16,7 @@ function BMICalculate()
         alert("Please enter your height.");
         return;
     }
+    /* Error Handling  for invalid data entered*/
     if (weight < 0) {
         alert("Your weight can only be negative in Theoretical Physics..., NOT in real life.");
         return;
@@ -67,6 +67,7 @@ function getDescription(thisBMI)
     else Description = "Please check your input values, BMI cannot be calculated.";
 
     var DESC = document.getElementById('DESC');
+    /*send deskription to cookes*/
     document.cookie = Description;
 }
 

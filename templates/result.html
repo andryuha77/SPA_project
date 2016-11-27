@@ -5,15 +5,15 @@
 <!--aded to base and child templates using the super block-->
 {{ super() }} {% endblock %} {% block page %}{{title}}{% endblock %} {% block heading %} {{ super() }} {% endblock %} {% block content %}
 <form id="myForm" action="/result" method="POST">
-    <!-- Output BMI value and its description -->
+    <!-- Output User name -->
     <h2>
         <div class="content">{{ name }} you are: <span class='value'></span>
     </h2>
 </form>
 <h4>Today: {{ current_time | datetimefilter }}</h4>
+     <!-- Output recomendation for User stored in cookies-->   
 <script>
     document.querySelector('.content .value').innerHTML = document.cookie;
-
 </script>
 <!--his is the end of child template</h3>-->
 {% endblock %}

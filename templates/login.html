@@ -8,8 +8,8 @@
     <h1>Please login to use</h1>
 </h1>
 {{ super() }} {% endblock %} {% block content %}
-<!--<h1><h1>Please login</h1></h1>-->
 <br>
+<!--form used to get user and password from user-->
 <form action="" method="post">
     <input type="text" placeholder="Username def. guest" name="username" value="{{
           request.form.username }}">

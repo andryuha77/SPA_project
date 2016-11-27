@@ -12,9 +12,15 @@ from time import sleep
 import flask as fl
 app = fl.Flask(__name__)
 
+# Originally adapted from:
 # https://github.com/ihoegen/Flask-Login-App-Tutorial
-def check_password(hashed_password, user_password):
-    return hashed_password == hashlib.md5(user_password.encode()).hexdigest()
+
+def insertUser(username,password):
+    con = sqlite3.connect("static/user.db")
+    cur = con.cursor()
+    cur.execute("INSERT INTO users (username,password) VALUES (?,?)", (username,password))
+    con.commit()
+    con.close()
 
 def validate(username, password):
     con = sqlite3.connect('static/user.db')
@@ -26,8 +32,8 @@ def validate(username, password):
         for row in rows:
             dbUser = row[0]
             dbPass = row[1]
-            if dbUser==username:
-                completion=check_password(dbPass, password)
+            if dbUser==username and dbPass==password:
+                completion=True
     return completion
 
 
@@ -43,6 +49,23 @@ def login():
         else:
             return redirect(url_for('start'))
     return render_template('login.html', error=error, current_time=datetime.datetime.now())
+
+
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    error = None
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        completion = insertUser(username, password)
+        if completion ==False:
+            error = 'Invalid Credentials. Please try again.'
+        else:
+            return redirect(url_for('start'))
+    return render_template('register.html', error=error, current_time=datetime.datetime.now())
+
+
 
 @app.route('/start', methods=['GET', 'POST'])
 def start():

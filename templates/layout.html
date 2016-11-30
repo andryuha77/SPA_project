@@ -4,7 +4,6 @@
 {% from "macros.html" import nav_link with context %}
 <!DOCTYPE html>
 <html>
-
 <head>
     {% block head %}
     <title>{% block title %}{% endblock %} BMI Calculator</title>
@@ -15,8 +14,7 @@
     <style type="text/css">
         .container {
             max-width: 700px;
-        }
-        
+        }     
         h2 {
             color: red;
         }
@@ -28,7 +26,6 @@
     <!--link to js file-->
     <script src="/static/BMI.js"></script>
 </head>
-
 <body>
     <!-- set up headbar-->
     <nav class="navbar navbar-inverse" role="navigation">
@@ -41,7 +38,7 @@
           </button>
                 <a class="navbar-brand" href="/">BMI</a>
             </div>
-
+            <!--links in headbar to login and registration pages-->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     {{ nav_link('login', 'Login') }} {{ nav_link('register', 'Register') }}
@@ -65,5 +62,4 @@
     <!-- Bootstrap.js -->
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 </body>
-
 </html>

@@ -26,7 +26,7 @@ def insertUser(username,password):
         for row in rows:
             dbUser = row[0]
             dbPass = row[1]
-            #set to completion to False
+            #set completion to False
             #if entered username equal to username stored in database
             if dbUser==username:
                 completion=False

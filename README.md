@@ -38,3 +38,7 @@ Once the application is running, it can be accessed by pointing your browser at 
 This web application runs in [Python 3](https://www.python.org) using the [Flask](http://flask.pocoo.org/) web micro-framework and uses SQLite as a database.
 Python 3 and Flask were requirements for the project.
 I chose SQLite as it is easy to use and does not require much setup to get the web application up and running.
+
+### Reference
+BMI.js file Adapted from: http://blog.excelstrategiesllc.com/2014/11/18/coding-your-first-javascript-bmi-calculator
+App Template Adapted from: https://github.com/mjhea0/thinkful-mentor/tree/master/python/jinja/flask_example
